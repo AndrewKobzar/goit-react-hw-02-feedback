@@ -16,30 +16,34 @@ export default function Statistics({
     return (
       <>
         <h2 className={s.title}>Statistics</h2>
-        <p className={s.text}>
-          Good: <span>{good}</span>
-        </p>
-        <p className={s.text}>
-          Neutral: <span>{neutral}</span>
-        </p>
-        <p className={s.text}>
-          Bad: <span>{bad}</span>
-        </p>
-        <p className={s.text}>
-          Total: <span>{(total = countTotalFeedback(good, neutral, bad))}</span>
-        </p>
-        <p className={s.text}>
-          Positive feedback:
-          <span>
-            {
-              (positivePercentage = countPositiveFeedbackPercentage(
-                good,
-                total
-              ))
-            }
-            %
-          </span>
-        </p>
+        <div className={s.textList}>
+          {' '}
+          <p className={s.text}>
+            Good: <span>{good}</span>
+          </p>
+          <p className={s.text}>
+            Neutral: <span>{neutral}</span>
+          </p>
+          <p className={s.text}>
+            Bad: <span>{bad}</span>
+          </p>
+          <p className={s.text}>
+            Total:{' '}
+            <span>{(total = countTotalFeedback(good, neutral, bad))}</span>
+          </p>
+          <p className={s.text}>
+            Positive feedback:
+            <span>
+              {
+                (positivePercentage = countPositiveFeedbackPercentage(
+                  good,
+                  total
+                ))
+              }
+              %
+            </span>
+          </p>
+        </div>
       </>
     );
   }
